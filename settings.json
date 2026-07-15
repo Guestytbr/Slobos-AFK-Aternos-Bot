@@ -8,7 +8,7 @@
   "server": {
     "ip": "2030helpme.aternos.me",
     "port": 42937,
-    "version": "",
+    "version": "1.21.4",
     "try-creative": false
   },
   "position": {
