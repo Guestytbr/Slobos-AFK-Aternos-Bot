@@ -6,10 +6,11 @@
     "type": "offline"
   },
   "server": {
-    "ip": "slobtest1.aternos.me",
-    "port": 27586,
+    "ip": "2030helpme.aternos.me",
+    "port": 42937,
     "version": "",
     "try-creative": false
+}
   },
   "position": {
     "enabled": true,
