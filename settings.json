@@ -6,8 +6,7 @@
     "type": "offline"
   },
   "server": {
-<<<<<<< HEAD
-    "ip": "manda2030helpme.aternos.me",
+    "ip": "2030helpme.aternos.me",
     "port": 42937,
     "version": "1.21.1",
     "try-creative": false
