@@ -17,6 +17,21 @@ const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
+// Discord relay client (global para o chatModule poder usar)
+let discordRelayClient = null;
+
+// Envia mensagem para o canal Discord de relay
+function sendToDiscordRelay(text) {
+  const channelId = config.discord && config.discord.relayChannelId;
+  if (!discordRelayClient || !channelId || channelId === "SEU_CHANNEL_ID_AQUI") return;
+  try {
+    const channel = discordRelayClient.channels.cache.get(channelId);
+    if (channel) channel.send(text).catch(() => {});
+  } catch (e) {
+    addLog(`[Discord Relay] Erro ao enviar pro Discord: ${e.message}`);
+  }
+}
+
 // Bot state tracking
 let botState = {
   connected: false,
@@ -1851,7 +1866,10 @@ function chatModule(bot) {
     if (!bot || username === bot.username) return;
 
     try {
-      // FIX: send chat events to Discord if enabled
+      // Relay chat do Minecraft → canal Discord (sempre que relay estiver ativo)
+      sendToDiscordRelay(`🎮 **${username}**: ${message}`);
+
+      // Webhook separado se configurado
       if (
         config.discord &&
         config.discord.enabled &&
@@ -2158,7 +2176,7 @@ function startDiscordRelay() {
     return;
   }
 
-  const discordClient = new Client({
+  discordRelayClient = new Client({
     intents: [
       GatewayIntentBits.Guilds,
       GatewayIntentBits.GuildMessages,
@@ -2166,12 +2184,12 @@ function startDiscordRelay() {
     ],
   });
 
-  discordClient.once("ready", () => {
-    addLog(`[Discord Relay] Bot conectado como ${discordClient.user.tag}`);
+  discordRelayClient.once("clientReady", () => {
+    addLog(`[Discord Relay] Bot conectado como ${discordRelayClient.user.tag}`);
     addLog(`[Discord Relay] Escutando canal: ${channelId}`);
   });
 
-  discordClient.on("messageCreate", (message) => {
+  discordRelayClient.on("messageCreate", (message) => {
     if (message.author.bot) return;
     if (message.channelId !== channelId) return;
     if (!bot || !botState.connected) {
@@ -2188,11 +2206,11 @@ function startDiscordRelay() {
     }
   });
 
-  discordClient.on("error", (e) => {
+  discordRelayClient.on("error", (e) => {
     addLog(`[Discord Relay] Erro: ${e.message}`);
   });
 
-  discordClient.login(token).catch((e) => {
+  discordRelayClient.login(token).catch((e) => {
     addLog(`[Discord Relay] Falha no login: ${e.message}`);
   });
 }
