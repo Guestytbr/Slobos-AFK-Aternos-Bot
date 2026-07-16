@@ -1,0 +1,32 @@
+--> npm install
+[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m Unsupported engine {
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   package: [32m'minecraft-protocol@1.64.0'[39m,
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   required: { node: [32m'>=22'[39m },
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   current: { node: [32m'v20.20.0'[39m, npm: [32m'10.8.2'[39m }
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m }
+[1G[0K⠙[1G[0K[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m Unsupported engine {
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   package: [32m'mineflayer@4.35.0'[39m,
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   required: { node: [32m'>=22'[39m },
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m   current: { node: [32m'v20.20.0'[39m, npm: [32m'10.8.2'[39m }
+[1mnpm[22m [33mwarn[39m [94mEBADENGINE[39m }
+[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K⠋[1G[0K⠙[1G[0K⠹[1G[0K⠸[1G[0K⠼[1G[0K⠴[1G[0K⠦[1G[0K⠧[1G[0K⠇[1G[0K⠏[1G[0K
+added 165 packages, and audited 166 packages in 6s
+[1G[0K⠏[1G[0K
+[1G[0K⠏[1G[0K22 packages are looking for funding
+[1G[0K⠏[1G[0K  run `npm fund` for details
+[1G[0K⠏[1G[0K
+[31m[1m14[22m[39m vulnerabilities (9 [33m[1mmoderate[22m[39m, 5 [31m[1mhigh[22m[39m)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[1G[0K⠏[1G[0K[1mnpm[22m [96mnotice[39m
+[1mnpm[22m [96mnotice[39m New [31mmajor[39m version of npm available! [31m10.8.2[39m -> [34m12.0.1[39m
+[1mnpm[22m [96mnotice[39m Changelog: [34mhttps://github.com/npm/cli/releases/tag/v12.0.1[39m
+[1mnpm[22m [96mnotice[39m To update run: [4mnpm install -g npm@12.0.1[24m
+[1mnpm[22m [96mnotice[39m
+[1G[0K⠏[1G[0K

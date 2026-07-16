@@ -1,0 +1,18 @@
+
+> minecraft-afk-bot@2.2 start
+> node index.js
+
+[1G[0K[2:34:21 AM] [KeepAlive] No RENDER_EXTERNAL_URL set - self-ping disabled (running locally)
+[2:34:21 AM] ==================================================
+[2:34:21 AM]   Minecraft AFK Bot v2.5 - Bug-Fixed Edition
+[2:34:21 AM] ==================================================
+[2:34:21 AM] Server: 2030helpme.aternos.me:42937
+[2:34:21 AM] Version: 1.21.1
+[2:34:21 AM] Auto-Reconnect: Enabled
+[2:34:21 AM] ==================================================
+[2:34:21 AM] [Bot] Creating bot instance...
+[2:34:21 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:34:21 AM] [Server] HTTP server error: listen EADDRINUSE: address already in use 0.0.0.0:5000
+[2:34:22 AM] [Bot] [+] Successfully spawned on server! (Version: 1.21.1)
+[2:34:22 AM] [Modules] Initializing all modules...
+[2:34:22 AM] [Modules] All modules initialized!

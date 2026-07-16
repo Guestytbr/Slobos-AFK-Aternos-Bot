@@ -1,0 +1,29 @@
+
+> minecraft-afk-bot@2.2 start
+> node index.js
+
+[1G[0K[2:57:18 AM] [KeepAlive] No RENDER_EXTERNAL_URL set - self-ping disabled (running locally)
+[2:57:18 AM] ==================================================
+[2:57:18 AM]   Minecraft AFK Bot v2.5 - Bug-Fixed Edition
+[2:57:18 AM] ==================================================
+[2:57:18 AM] Server: 2030helpme.aternos.me:42937
+[2:57:18 AM] Version: 1.21.1
+[2:57:18 AM] Auto-Reconnect: Enabled
+[2:57:18 AM] ==================================================
+[2:57:18 AM] [Bot] Creating bot instance...
+[2:57:18 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:57:18 AM] [Server] HTTP server started on port 5000
+[2:57:19 AM] [Discord Relay] Bot conectado como Mine#2272
+[2:57:19 AM] [Discord Relay] Escutando canal: 1527135060069716028
+[2:57:20 AM] [Bot] [+] Successfully spawned on server! (Version: 1.21.1)
+[2:57:20 AM] [Modules] Initializing all modules...
+[2:57:20 AM] [Modules] All modules initialized!
+[2:57:51 AM] [Discord Relay] Enviado pro Minecraft: [Discord] guestobr: que?
+[2:59:41 AM] [Discord Relay] Enviado pro Minecraft: [Discord] guestobr: a
+[2:59:47 AM] [Discord Relay] Enviado pro Minecraft: [Discord] guestobr: abcboo
+[2:59:51 AM] [Discord Relay] Enviado pro Minecraft: [Discord] guestobr: merda
+[3:02:18 AM] [Memory] Heap: 89.52 MB
+[3:07:18 AM] [Memory] Heap: 212.95 MB
+[3:12:18 AM] [Memory] Heap: 71.68 MB
+[3:17:18 AM] [Memory] Heap: 201.36 MB
+[3:22:18 AM] [Memory] Heap: 70.08 MB

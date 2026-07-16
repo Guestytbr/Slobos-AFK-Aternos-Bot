@@ -1,0 +1,30 @@
+
+> minecraft-afk-bot@2.2 start
+> node index.js
+
+[1G[0K[2:27:38 AM] [KeepAlive] No RENDER_EXTERNAL_URL set - self-ping disabled (running locally)
+[2:27:38 AM] ==================================================
+[2:27:38 AM]   Minecraft AFK Bot v2.5 - Bug-Fixed Edition
+[2:27:38 AM] ==================================================
+[2:27:38 AM] Server: 2030helpme.aternos.me:42937
+[2:27:38 AM] Version: 1.21.1
+[2:27:38 AM] Auto-Reconnect: Enabled
+[2:27:38 AM] ==================================================
+[2:27:38 AM] [Bot] Creating bot instance...
+[2:27:38 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:27:38 AM] [Bot] Failed to create bot: username is required
+[2:27:38 AM] [Bot] Reconnecting in 5.882s (attempt #1)
+[2:27:38 AM] [Server] Port 5000 in use - trying port 5001 
+[2:27:38 AM] [Server] HTTP server started on port 5001 
+[2:27:44 AM] [Bot] Creating bot instance...
+[2:27:44 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:27:44 AM] [Bot] Failed to create bot: username is required
+[2:27:44 AM] [Bot] Reconnecting in 9.283s (attempt #2)
+[2:27:53 AM] [Bot] Creating bot instance...
+[2:27:53 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:27:53 AM] [Bot] Failed to create bot: username is required
+[2:27:53 AM] [Bot] Reconnecting in 16.584s (attempt #3)
+[2:28:09 AM] [Bot] Creating bot instance...
+[2:28:09 AM] [Bot] Connecting to 2030helpme.aternos.me:42937
+[2:28:09 AM] [Bot] Failed to create bot: username is required
+[2:28:09 AM] [Bot] Reconnecting in 33.917s (attempt #4)
