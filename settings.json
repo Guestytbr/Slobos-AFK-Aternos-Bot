@@ -6,7 +6,8 @@
     "type": "offline"
   },
   "server": {
-    "ip": "manda2030helpme.aternos.me",
+<<<<<<< HEAD
+    "ip": "2030helpme.aternos.me",
     "port": 42937,
     "version": "1.21.1",
     "try-creative": false
@@ -32,7 +33,7 @@
       "repeat-delay": 120,
       "messages": [
         "I'm a regular player",
-        "Subscribe to Slobos!",
+        "Sigma",
         "I like to play Minecraft!"
       ]
     },
@@ -74,8 +75,8 @@
   },
   "discord": {
     "enabled": false,
-    "webhookUrl": "YOUR_DISCORD_WEBHOOK_URL_HERE",
     "relayChannelId": "1527135060069716028",
+    "webhookUrl": "https://discord.com/api/webhooks/1527143006166323393/aFUZ8C9HdOI7xymNusgkzax1iOoIJfOpOp-TgzCGwPy80sKoj9aokw5X-RYqRbUkXoec",
     "events": {
       "connect": true,
       "disconnect": true,
