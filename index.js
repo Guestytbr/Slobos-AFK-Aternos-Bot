@@ -8,6 +8,7 @@ const config = require("./settings.json");
 const express = require("express");
 const http = require("http");
 const https = require("https");
+const { Client, GatewayIntentBits } = require("discord.js");
 
 // ============================================================
 // EXPRESS SERVER - Keep Render/Aternos alive
@@ -2140,4 +2141,61 @@ addLog(
 );
 addLog("=".repeat(50));
 
+// ============================================================
+// DISCORD → MINECRAFT RELAY
+// Lê mensagens de um canal do Discord e envia pro chat do Minecraft
+// ============================================================
+function startDiscordRelay() {
+  const token = process.env.DISCORD_BOT_TOKEN;
+  const channelId = config.discord && config.discord.relayChannelId;
+
+  if (!token) {
+    addLog("[Discord Relay] DISCORD_BOT_TOKEN não configurado — relay desativado");
+    return;
+  }
+  if (!channelId || channelId === "SEU_CHANNEL_ID_AQUI") {
+    addLog("[Discord Relay] relayChannelId não configurado no settings.json — relay desativado");
+    return;
+  }
+
+  const discordClient = new Client({
+    intents: [
+      GatewayIntentBits.Guilds,
+      GatewayIntentBits.GuildMessages,
+      GatewayIntentBits.MessageContent,
+    ],
+  });
+
+  discordClient.once("ready", () => {
+    addLog(`[Discord Relay] Bot conectado como ${discordClient.user.tag}`);
+    addLog(`[Discord Relay] Escutando canal: ${channelId}`);
+  });
+
+  discordClient.on("messageCreate", (message) => {
+    if (message.author.bot) return;
+    if (message.channelId !== channelId) return;
+    if (!bot || !botState.connected) {
+      addLog("[Discord Relay] Mensagem recebida mas bot não está conectado");
+      return;
+    }
+
+    const text = `[Discord] ${message.author.username}: ${message.content}`;
+    try {
+      bot.chat(text);
+      addLog(`[Discord Relay] Enviado pro Minecraft: ${text}`);
+    } catch (e) {
+      addLog(`[Discord Relay] Erro ao enviar mensagem: ${e.message}`);
+    }
+  });
+
+  discordClient.on("error", (e) => {
+    addLog(`[Discord Relay] Erro: ${e.message}`);
+  });
+
+  discordClient.login(token).catch((e) => {
+    addLog(`[Discord Relay] Falha no login: ${e.message}`);
+  });
+}
+
+startDiscordRelay();
 createBot();
