@@ -7,6 +7,7 @@
   },
   "server": {
 <<<<<<< HEAD
+    "ip": "manda2030helpme.aternos.me",
     "port": 42937,
     "version": "1.21.1",
     "try-creative": false
@@ -32,6 +33,7 @@
       "repeat-delay": 120,
       "messages": [
         "I'm a regular player",
+        "Subscribe to Slobos!",
         "I like to play Minecraft!"
       ]
     },
