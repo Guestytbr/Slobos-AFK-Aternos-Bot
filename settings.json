@@ -75,7 +75,7 @@
   "discord": {
     "enabled": false,
     "webhookUrl": "YOUR_DISCORD_WEBHOOK_URL_HERE",
-    "relayChannelId": "SEU_CHANNEL_ID_AQUI",
+    "relayChannelId": "1527135060069716028",
     "events": {
       "connect": true,
       "disconnect": true,
