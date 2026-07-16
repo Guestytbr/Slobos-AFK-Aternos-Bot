@@ -1,12 +1,20 @@
 {
   "name": "AFK Bot",
   "bot-account": {
+<<<<<<< HEAD
     "username": "jeve",
+=======
+    "username": "Neymara",
+>>>>>>> 11a85eb8374c28a5f8dff59323e6985351a65511
     "password": "",
     "type": "offline"
   },
   "server": {
+<<<<<<< HEAD
     "ip": "manda2030helpme.aternos.me",
+=======
+    "ip": "2030helpme.aternos.me",
+>>>>>>> 11a85eb8374c28a5f8dff59323e6985351a65511
     "port": 42937,
     "version": "1.21.1",
     "try-creative": false
@@ -74,8 +82,12 @@
   },
   "discord": {
     "enabled": false,
+<<<<<<< HEAD
     "webhookUrl": "YOUR_DISCORD_WEBHOOK_URL_HERE",
     "relayChannelId": "1527135060069716028",
+=======
+    "webhookUrl": "",
+>>>>>>> 11a85eb8374c28a5f8dff59323e6985351a65511
     "events": {
       "connect": true,
       "disconnect": true,
