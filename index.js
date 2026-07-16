@@ -1881,6 +1881,77 @@ function chatModule(bot) {
       addLog("[Chat] Error:", e.message);
     }
   });
+
+  // Detecta mensagens privadas enviadas DIRETAMENTE pro bot (whisper)
+  bot.on("whisper", (username, message) => {
+    if (!bot) return;
+    try {
+      addLog(`[PM] ${username} -> ${bot.username}: ${message}`);
+      if (
+        config.discord &&
+        config.discord.enabled &&
+        config.discord.events &&
+        config.discord.events.privateMessages
+      ) {
+        sendDiscordWebhook(
+          `📨 **Mensagem Privada**\n**${username}** → **${bot.username}**: ${message}`,
+          0xf0a500
+        );
+      }
+    } catch (e) {
+      addLog("[PM] Error:", e.message);
+    }
+  });
+
+  // Detecta padrões de PM visíveis no chat do servidor (ex: plugins que mostram PMs pra todos)
+  bot.on("message", (jsonMsg) => {
+    if (!bot) return;
+    try {
+      const text = jsonMsg.toString();
+
+      // Padrões comuns de mensagem privada em servidores Minecraft/Paper/Spigot:
+      // [Jogador1 -> Jogador2]: mensagem
+      // [Jogador1 -> me]: mensagem
+      // Jogador1 whispers to you: mensagem
+      // [Jogador1 -> Jogador2] mensagem
+      const patterns = [
+        /^\[(.+?)\s*->\s*(.+?)\][:]\s*(.+)$/,
+        /^\[(.+?)\s*->\s*(.+?)\]\s+(.+)$/,
+        /^(.+?)\s+whispers?\s+to\s+(.+?)[:]\s*(.+)$/i,
+        /^(.+?)\s+murmurou\s+para\s+(.+?)[:]\s*(.+)$/i,
+        /^\((.+?)\s*->\s*(.+?)\)\s*(.+)$/,
+      ];
+
+      for (const pattern of patterns) {
+        const match = text.match(pattern);
+        if (match) {
+          const [, sender, receiver, pmMessage] = match;
+          // Evita duplicar whispers que o bot já capturou pelo evento "whisper"
+          if (
+            receiver.trim().toLowerCase() === bot.username.toLowerCase() ||
+            sender.trim().toLowerCase() === bot.username.toLowerCase()
+          ) {
+            return;
+          }
+          addLog(`[PM detectado] ${sender} -> ${receiver}: ${pmMessage}`);
+          if (
+            config.discord &&
+            config.discord.enabled &&
+            config.discord.events &&
+            config.discord.events.privateMessages
+          ) {
+            sendDiscordWebhook(
+              `📨 **Mensagem Privada**\n**${sender.trim()}** → **${receiver.trim()}**: ${pmMessage.trim()}`,
+              0xf0a500
+            );
+          }
+          break;
+        }
+      }
+    } catch (e) {
+      // Silencioso - não logar cada mensagem normal
+    }
+  });
 }
 
 // ============================================================
